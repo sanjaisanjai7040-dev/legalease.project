@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LegalEase – AI-Powered Legal Intelligence</title>
+  <meta name="description" content="LegalEase uses cutting-edge AI to analyze legal documents, review contracts, and provide intelligent legal insights instantly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="nav-logo-link">
+        <img src="legalease_logo.jpg" alt="LegalEase Logo" class="logo-img" />
+        <span class="logo-text">Legal<span class="logo-accent">Ease</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+        <li><a href="#features" class="nav-link" id="nav-features">Features</a></li>
+        <li><a href="#how-it-works" class="nav-link" id="nav-how">How It Works</a></li>
+        <li><a href="#analyze" class="nav-link" id="nav-analyze">Analyze</a></li>
+        <li><a href="#chat" class="nav-link" id="nav-chat">AI Chat</a></li>
+        <li><a href="#pricing" class="nav-link" id="nav-pricing">Pricing</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-outline" id="btn-login">Log In</button>
+        <button class="btn-primary" id="btn-get-started">Get Started Free</button>
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <div class="grid-lines"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge" id="hero-badge">
+        <span class="badge-dot"></span>
+        AI-Powered Legal Intelligence
+      </div>
+      <h1 class="hero-title" id="hero-title">
+        Legal Expertise,<br/>
+        <span class="gradient-text">Supercharged by AI</span>
+      </h1>
+      <p class="hero-subtitle" id="hero-subtitle">
+        Analyze complex legal documents, review contracts for hidden risks, and get 
+        AI-driven insights in seconds — not hours. Built for law firms, businesses, 
+        and legal professionals.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-hero-primary" id="btn-analyze-now" onclick="scrollToSection('analyze')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+          Analyze a Document
+        </button>
+        <button class="btn-hero-secondary" id="btn-watch-demo" onclick="scrollToSection('review')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Review a Contract
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item" id="stat-1">
+          <span class="stat-number">50K+</span>
+          <span class="stat-label">Documents Analyzed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" id="stat-2">
+          <span class="stat-number">98.7%</span>
+          <span class="stat-label">Accuracy Rate</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item" id="stat-3">
+          <span class="stat-number">10x</span>
+          <span class="stat-label">Faster Reviews</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" id="hero-visual">
+      <div class="doc-card floating" id="doc-card-main">
+        <div class="doc-card-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>NDA_Agreement_v2.pdf</span>
+          <span class="doc-status processing">Analyzing…</span>
+        </div>
+        <div class="doc-analysis">
+          <div class="analysis-item risk-high" id="risk-item-1">
+            <span class="risk-icon">⚠️</span>
+            <div>
+              <strong>High Risk Clause Detected</strong>
+              <p>Unlimited liability in Section 4.2</p>
+            </div>
+          </div>
+          <div class="analysis-item risk-medium" id="risk-item-2">
+            <span class="risk-icon">⚡</span>
+            <div>
+              <strong>Ambiguous Termination Terms</strong>
+              <p>Notice period unclear in Section 7</p>
+            </div>
+          </div>
+          <div class="analysis-item risk-low" id="risk-item-3">
+            <span class="risk-icon">✅</span>
+            <div>
+              <strong>Confidentiality Clause</strong>
+              <p>Standard — looks good</p>
+            </div>
+          </div>
+        </div>
+        <div class="doc-score">
+          <span>Risk Score</span>
+          <div class="score-bar">
+            <div class="score-fill" style="width: 62%"></div>
+          </div>
+          <span class="score-val medium">62 / 100</span>
+        </div>
+      </div>
+      <div class="floating-badge badge-top-right" id="badge-ai">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/></svg>
+        AI Analysis Complete
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Capabilities</span>
+        <h2 class="section-title">Everything Your Legal Team Needs</h2>
+        <p class="section-desc">Powered by advanced AI to transform how you handle legal documents</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" id="feature-1">
+          <div class="feature-icon icon-blue">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+          </div>
+          <h3>Smart Document Analysis</h3>
+          <p>Upload any legal document — NDAs, contracts, agreements — and get a comprehensive AI-powered analysis with risk scoring and clause-by-clause breakdown.</p>
+          <ul class="feature-list">
+            <li>Risk identification &amp; scoring</li>
+            <li>Key clause extraction</li>
+            <li>Plain-language summaries</li>
+          </ul>
+        </div>
+        <div class="feature-card featured" id="feature-2">
+          <div class="feature-badge-card">⭐ Most Popular</div>
+          <div class="feature-icon icon-gold">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+          </div>
+          <h3>Contract Review &amp; Summarization</h3>
+          <p>Get instant summaries of lengthy contracts with highlighted obligations, deadlines, penalties, and negotiation points flagged automatically.</p>
+          <ul class="feature-list">
+            <li>Executive summary generation</li>
+            <li>Obligation tracking</li>
+            <li>Red flag alerts</li>
+          </ul>
+        </div>
+        <div class="feature-card" id="feature-3">
+          <div class="feature-icon icon-purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Legal Risk Assessment</h3>
+          <p>Automatically identify potentially problematic clauses, legal loopholes, and compliance issues with severity ratings and recommended remediation.</p>
+          <ul class="feature-list">
+            <li>Clause-level risk scoring</li>
+            <li>Jurisdiction-aware analysis</li>
+            <li>Remediation suggestions</li>
+          </ul>
+        </div>
+        <div class="feature-card" id="feature-4">
+          <div class="feature-icon icon-green">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Real-time Collaboration</h3>
+          <p>Share document analyses with your team, add comments, track revisions, and collaborate on legal reviews in real time from anywhere.</p>
+          <ul class="feature-list">
+            <li>Multi-user workspaces</li>
+            <li>Comment threads</li>
+            <li>Version history</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simple Process</span>
+        <h2 class="section-title">From Document to Insight in 3 Steps</h2>
+        <p class="section-desc">No legal expertise required — our AI does the heavy lifting</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card" id="step-card-1">
+          <div class="step-number">01</div>
+          <div class="step-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3>Upload or Paste</h3>
+          <p>Drop in your PDF, Word document, or paste raw legal text directly. We support NDAs, contracts, agreements, terms of service, and more.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step-card" id="step-card-2">
+          <div class="step-number">02</div>
+          <div class="step-icon icon-gold-step">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3>AI Analyzes Instantly</h3>
+          <p>Our Gemini-powered AI reads every clause, identifies risks, flags ambiguous language, and scores the document in seconds — not hours.</p>
+          <div class="step-connector"></div>
+        </div>
+        <div class="step-card" id="step-card-3">
+          <div class="step-number">03</div>
+          <div class="step-icon icon-green-step">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3>Act on Clear Insights</h3>
+          <p>Get a plain-language report with prioritized risks, recommended clauses to negotiate, and a risk score. Share, export, or discuss with our AI chat.</p>
+        </div>
+      </div>
+      <div class="trust-bar">
+        <div class="trust-item" id="trust-1"><span class="trust-icon">🔒</span><span>Bank-grade encryption</span></div>
+        <div class="trust-item" id="trust-2"><span class="trust-icon">⚡</span><span>Results in under 10 seconds</span></div>
+        <div class="trust-item" id="trust-3"><span class="trust-icon">🌍</span><span>Supports 40+ jurisdictions</span></div>
+        <div class="trust-item" id="trust-4"><span class="trust-icon">📜</span><span>SOC 2 Type II certified</span></div>
+        <div class="trust-item" id="trust-5"><span class="trust-icon">🤝</span><span>Trusted by 2,000+ firms</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI DOCUMENT ANALYZER ── -->
+  <section class="analyzer-section" id="analyze">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Live Demo</span>
+        <h2 class="section-title">AI Document Analyzer</h2>
+        <p class="section-desc">Paste or type any legal text below and watch our AI analyze it instantly</p>
+      </div>
+      <div class="analyzer-layout">
+        <div class="analyzer-input-panel">
+          <div class="panel-header">
+            <h3>Document Input</h3>
+            <div class="panel-actions">
+              <button class="chip-btn" id="btn-sample-nda" onclick="loadSample('nda')">Sample NDA</button>
+              <button class="chip-btn" id="btn-sample-contract" onclick="loadSample('contract')">Sample Contract</button>
+              <button class="chip-btn" id="btn-clear-input" onclick="clearInput()">Clear</button>
+            </div>
+          </div>
+          <textarea
+            id="document-input"
+            class="doc-textarea"
+            placeholder="Paste your legal document text here..."
+            rows="16"
+          ></textarea>
+          <div class="analyzer-controls">
+            <div class="model-select-wrap">
+              <label for="api-key-input">Gemini API Key</label>
+              <input type="password" id="api-key-input" class="api-key-input" placeholder="AIza..." />
+            </div>
+            <button class="btn-analyze" id="btn-analyze" onclick="analyzeDocument()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              Analyze with AI
+            </button>
+          </div>
+        </div>
+        <div class="analyzer-output-panel" id="analyzer-output">
+          <div class="output-placeholder" id="output-placeholder">
+            <div class="placeholder-icon">⚖️</div>
+            <p>Your AI analysis will appear here</p>
+            <span>Enter document text and click "Analyze with AI"</span>
+          </div>
+          <div class="output-content" id="output-content" style="display:none">
+            <div class="output-summary" id="output-summary"></div>
+            <div class="output-risks" id="output-risks"></div>
+            <div class="output-clauses" id="output-clauses"></div>
+          </div>
+          <div class="output-loading" id="output-loading" style="display:none">
+            <div class="loading-spinner"></div>
+            <p>AI is analyzing your document...</p>
+            <div class="loading-steps" id="loading-steps">
+              <span class="step active" id="step-1">Parsing structure</span>
+              <span class="step" id="step-2">Identifying clauses</span>
+              <span class="step" id="step-3">Assessing risks</span>
+              <span class="step" id="step-4">Generating summary</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTRACT REVIEW ── -->
+  <section class="review-section" id="review">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Contract Review</span>
+        <h2 class="section-title">Instant Contract Summarization</h2>
+        <p class="section-desc">Get an executive summary of any contract in plain language</p>
+      </div>
+      <div class="review-layout">
+        <div class="review-input-panel">
+          <div class="panel-header">
+            <h3>Contract Text</h3>
+            <div class="panel-actions">
+              <button class="chip-btn" id="btn-sample-review" onclick="loadContractSample()">Load Sample</button>
+              <button class="chip-btn" id="btn-clear-review" onclick="clearReview()">Clear</button>
+            </div>
+          </div>
+          <textarea
+            id="contract-input"
+            class="doc-textarea"
+            placeholder="Paste your contract text here to get an instant AI-powered summary..."
+            rows="14"
+          ></textarea>
+          <div class="analyzer-controls">
+            <div class="review-type-wrap">
+              <label for="review-type">Review Focus</label>
+              <select id="review-type" class="review-select">
+                <option value="general">General Overview</option>
+                <option value="risks">Risk Identification</option>
+                <option value="obligations">Obligations &amp; Deadlines</option>
+                <option value="financial">Financial Terms</option>
+                <option value="termination">Termination Conditions</option>
+              </select>
+            </div>
+            <button class="btn-analyze btn-review" id="btn-review" onclick="reviewContract()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Review Contract
+            </button>
+          </div>
+        </div>
+        <div class="review-output-panel" id="review-output-panel">
+          <div class="output-placeholder" id="review-placeholder">
+            <div class="placeholder-icon">📋</div>
+            <p>Contract review will appear here</p>
+            <span>Paste contract text and click "Review Contract"</span>
+          </div>
+          <div class="output-content" id="review-content" style="display:none"></div>
+          <div class="output-loading review-loading" id="review-loading" style="display:none">
+            <div class="loading-spinner"></div>
+            <p>Reviewing your contract...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LEGAL AI CHATBOT ── -->
+  <section class="chat-section" id="chat">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">AI Assistant</span>
+        <h2 class="section-title">Ask Our Legal AI Anything</h2>
+        <p class="section-desc">Get instant answers to legal questions in plain English — available 24/7</p>
+      </div>
+      <div class="chat-layout">
+        <div class="chat-sidebar">
+          <h4>Quick Questions</h4>
+          <div class="quick-prompts" id="quick-prompts">
+            <button class="quick-prompt-btn" id="qp-1" onclick="sendQuickPrompt('What clauses should I look for in an NDA?')">What clauses should I look for in an NDA?</button>
+            <button class="quick-prompt-btn" id="qp-2" onclick="sendQuickPrompt('What is the difference between a limitation of liability and an indemnification clause?')">Limitation of liability vs indemnification?</button>
+            <button class="quick-prompt-btn" id="qp-3" onclick="sendQuickPrompt('How long should a non-compete clause be enforceable?')">How long should non-compete clauses last?</button>
+            <button class="quick-prompt-btn" id="qp-4" onclick="sendQuickPrompt('What are the red flags in a service agreement?')">Red flags in service agreements?</button>
+            <button class="quick-prompt-btn" id="qp-5" onclick="sendQuickPrompt('What is force majeure and when does it apply?')">What is force majeure?</button>
+            <button class="quick-prompt-btn" id="qp-6" onclick="sendQuickPrompt('How do I negotiate better payment terms in a contract?')">How to negotiate payment terms?</button>
+          </div>
+          <div class="chat-disclaimer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            AI responses are for informational purposes only and do not constitute legal advice. Always consult a qualified attorney.
+          </div>
+        </div>
+        <div class="chat-main">
+          <div class="chat-header">
+            <div class="chat-avatar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/></svg>
+            </div>
+            <div>
+              <div class="chat-name">LegalEase AI</div>
+              <div class="chat-status-dot"><span class="status-dot"></span> Online — ready to help</div>
+            </div>
+            <button class="clear-chat-btn" id="btn-clear-chat" onclick="clearChat()">Clear Chat</button>
+          </div>
+          <div class="chat-messages" id="chat-messages">
+            <div class="chat-msg ai" id="initial-msg">
+              <div class="msg-avatar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6z"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <div class="msg-bubble">
+                <p>Hello! I'm LegalEase AI, your intelligent legal assistant. I can help you understand legal concepts, explain contract clauses, identify risks, and answer general legal questions.</p>
+                <p style="margin-top:8px;">What legal question can I help you with today?</p>
+                <div class="msg-time">Just now</div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input-row">
+            <div class="chat-api-row" id="chat-api-row">
+              <input type="password" id="chat-api-key" class="api-key-input" placeholder="Gemini API Key (optional — demo works without it)" />
+            </div>
+            <div class="chat-input-wrap">
+              <textarea id="chat-input" class="chat-textarea" placeholder="Ask a legal question..." rows="1" onkeydown="handleChatKey(event)"></textarea>
+              <button class="chat-send-btn" id="btn-chat-send" onclick="sendChatMessage()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING ── -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pricing</span>
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-desc">Start free, scale as you grow</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card" id="pricing-starter">
+          <div class="pricing-tier">Starter</div>
+          <div class="pricing-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount">0</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">Perfect for individuals and small projects</p>
+          <ul class="pricing-features">
+            <li>✅ 10 document analyses/month</li>
+            <li>✅ 5 contract reviews/month</li>
+            <li>✅ Basic risk scoring</li>
+            <li>✅ Plain-language summaries</li>
+            <li>❌ Priority processing</li>
+            <li>❌ Team collaboration</li>
+          </ul>
+          <button class="btn-pricing-outline" id="btn-starter">Get Started Free</button>
+        </div>
+        <div class="pricing-card pricing-featured" id="pricing-pro">
+          <div class="pricing-popular">Most Popular</div>
+          <div class="pricing-tier">Professional</div>
+          <div class="pricing-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount">49</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">For legal professionals and growing teams</p>
+          <ul class="pricing-features">
+            <li>✅ Unlimited document analyses</li>
+            <li>✅ Unlimited contract reviews</li>
+            <li>✅ Advanced risk scoring</li>
+            <li>✅ Team collaboration (5 users)</li>
+            <li>✅ Priority AI processing</li>
+            <li>✅ Export to PDF/Word</li>
+          </ul>
+          <button class="btn-pricing-primary" id="btn-pro">Start 14-Day Trial</button>
+        </div>
+        <div class="pricing-card" id="pricing-enterprise">
+          <div class="pricing-tier">Enterprise</div>
+          <div class="pricing-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount">199</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="pricing-desc">For law firms and large organizations</p>
+          <ul class="pricing-features">
+            <li>✅ Everything in Professional</li>
+            <li>✅ Unlimited team members</li>
+            <li>✅ Custom AI fine-tuning</li>
+            <li>✅ API access</li>
+            <li>✅ Dedicated support</li>
+            <li>✅ SOC 2 compliance</li>
+          </ul>
+          <button class="btn-pricing-outline" id="btn-enterprise">Contact Sales</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="legalease_logo.jpg" alt="LegalEase" class="logo-img-sm" />
+            <span class="logo-text">Legal<span class="logo-accent">Ease</span></span>
+          </div>
+          <p>AI-powered legal intelligence for the modern legal professional.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#analyze">Document Analyzer</a>
+            <a href="#review">Contract Review</a>
+            <a href="#pricing">Pricing</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#">About Us</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">GDPR</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LegalEase. All rights reserved. Built with love and AI.</p>
+        <p class="footer-disclaimer">LegalEase provides AI-assisted legal analysis and is not a substitute for professional legal advice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
